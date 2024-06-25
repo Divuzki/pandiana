@@ -1,2 +1,3 @@
 import Hero from "./hero";
-export { Hero };
+import Buy from "./buy";
+export { Hero, Buy };
