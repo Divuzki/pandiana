@@ -15,11 +15,11 @@ type RoadmapItemProps = {
  * @returns {JSX.Element} A section element containing the roadmap item.
  */
 const RoadmapItem: React.FC<RoadmapItemProps> = ({ title, description }) => (
-  <section className="flex flex-col grow px-12 py-10 w-full text-2xl text-center uppercase border border-teal-900 border-solid backdrop-blur-[17px] bg-neutral-900 bg-opacity-50 rounded-[40px] max-md:px-5 max-md:mt-6 max-md:max-w-full">
-    <h3 className="self-center tracking-wider bg-clip-text leading-[133%]">
+  <section className="flex flex-col grow px-12 py-10 font-monument w-full text-2xl text-center uppercase border border-teal-900 border-solid backdrop-blur-[17px] bg-neutral-900 bg-opacity-50 rounded-[40px] max-md:px-5 max-md:mt-6 max-md:max-w-full">
+    <h3 className="self-center tracking-wider bg-clip-text font-bold text-yellow-500 leading-[133%]">
       {title}
     </h3>
-    <p className="mt-8 leading-8 text-white max-md:max-w-full">{description}</p>
+    <p className="mt-8 leading-8 text-white font-medium max-md:max-w-full">{description}</p>
   </section>
 );
 
@@ -66,7 +66,7 @@ const Roadmap: React.FC = () => {
         />
         <div className="flex relative flex-col p-20 w-full max-md:px-5 max-md:max-w-full">
           <header className="flex flex-col self-center mt-16 text-white max-md:mt-10 max-md:max-w-full">
-            <h1 className="text-3xl font-extrabold leading-10 text-center uppercase max-md:max-w-full">
+            <h1 className="text-3xl font-monument font-extrabold leading-10 text-center uppercase max-md:max-w-full">
               PANDIANA Roadmap
             </h1>
             <h2 className="self-center mt-3.5 text-2xl font-medium leading-8">
