@@ -28,14 +28,14 @@ const ExpeditionCard: React.FC<ExpeditionCardProps> = ({
     <h2 className="font-medium bg-clip-text leading-[100%] max-md:max-w-full">
       {title}
     </h2>
-    <p className="mt-8 font-extrabold leading-10 text-white uppercase max-md:max-w-full">
+    <p className="mt-8 font-monument font-extrabold leading-10 text-white uppercase max-md:max-w-full">
       {subtitle}
     </p>
     <button
       onClick={onStartExpedition}
-      className="flex flex-col justify-center self-center p-5 mt-8 text-lg leading-6 rounded-3xl border border-yellow-700 border-solid hover:bg-yellow-700 transition-colors duration-300"
+      className="flex flex-col justify-center default-bg-gradient font-monument self-center p-5 mt-8 text-lg leading-6 rounded-3xl border border-yellow-700 border-solid hover:bg-yellow-700 transition-colors duration-300"
     >
-      <span className="bg-clip-text">{tokenAmount} $PNDA Tokens</span>
+      <span className="bg-clip-text text-stone-200">{tokenAmount} $PNDA Tokens</span>
     </button>
   </section>
 );

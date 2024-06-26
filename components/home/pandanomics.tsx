@@ -62,7 +62,7 @@ const Pandanomics: React.FC = () => {
           priority
         />
         <div className="flex relative flex-col px-14 py-16 w-full max-md:px-5 max-md:max-w-full">
-          <h1 className="self-center mt-2 text-3xl leading-10 text-center uppercase bg-clip-text tracking-[3.2px]">
+          <h1 className="self-center mt-2 text-3xl leading-10 text-center uppercase text-yellow-400 font-extrabold tracking-[3.2px]">
             Pandanomics
           </h1>
           <div className="flex flex-wrap justify-center content-start items-center px-16 mt-20 max-md:px-5 max-md:mt-10 max-md:max-w-full">
