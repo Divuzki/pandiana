@@ -121,8 +121,7 @@ function Buy(): JSX.Element {
   };
 
   return (
-    <main className="flex flex-col justify-center">
-      <section className="flex overflow-hidden relative flex-col justify-center w-full min-h-[967px]d py-4 max-md:max-w-full">
+    <section className="flex overflow-hidden relative flex-col justify-center w-full min-h-[967px]d py-4 max-md:max-w-full">
         <Image
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/ecd43ff0f86f3857e11a2097f6864e07955561ed28c900722dac2b9155c90aa2?apiKey=1f7f595eced5468b9fc0d8d091e46289&"
           alt="Background image"
@@ -184,7 +183,6 @@ function Buy(): JSX.Element {
           </div>
         </div>
       </section>
-    </main>
   );
 }
 

@@ -198,7 +198,7 @@ const Hero: React.FC = () => {
         <img
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/28ec8a7f1c20093de6ead8c1526e236dd3830e79254d6933ac962bc98b5ae094?apiKey=1f7f595eced5468b9fc0d8d091e46289&"
           alt=""
-          className="absolute inset-0 object-cover"
+          className="absolute inset-0 object-cover h-full w-full"
         />
         <div className="flex relative flex-col items-center px-16 pt-20 pb-11 w-full max-md:px-5 max-md:max-w-full">
           <div className="mt-12 w-full max-w-[1177px] max-md:mt-10 max-md:max-w-full">

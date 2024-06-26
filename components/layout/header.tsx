@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 /**
  * Props for the NavItem component
@@ -37,6 +38,7 @@ const NavItem: React.FC<NavItemProps> = ({ text, onClick, isActive }) => (
 const Header: React.FC = () => {
   const [activeItem, setActiveItem] = useState<string | null>(null);
   const navItems = ["Buy $PNDA", "Whitepaper", "Pandanomics", "Contact"];
+  const router = useRouter();
 
   /**
    * Handles the click event for a navigation item
@@ -44,6 +46,8 @@ const Header: React.FC = () => {
    */
   const handleNavItemClick = (item: string) => {
     setActiveItem(item);
+    // scroll to section
+    router.push(`#${item.toLowerCase().replaceAll(" ", "-")}`);
   };
 
   return (
