@@ -195,25 +195,16 @@ const Hero: React.FC = () => {
   return (
     <div className="flex flex-col justify-center">
       <main className="flex overflow-hidden relative flex-col justify-center w-full min-h-[967px] max-md:max-w-full">
-        <Image
+        <img
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/28ec8a7f1c20093de6ead8c1526e236dd3830e79254d6933ac962bc98b5ae094?apiKey=1f7f595eced5468b9fc0d8d091e46289&"
           alt=""
-          layout="fill"
-          objectFit="cover"
-          className="absolute inset-0"
+          className="absolute inset-0 object-cover"
         />
         <div className="flex relative flex-col items-center px-16 pt-20 pb-11 w-full max-md:px-5 max-md:max-w-full">
           <div className="mt-12 w-full max-w-[1177px] max-md:mt-10 max-md:max-w-full">
             <div className="flex gap-5 max-md:flex-col max-md:gap-0">
               <section className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
                 <div className="flex flex-col md:items-start items-center max-md:mt-10 max-md:max-w-full">
-                  {/* <Image
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/7a087aed668ed370846b489e1c765eac076ccacbcb6f1e7557641428da19d33a?apiKey=1f7f595eced5468b9fc0d8d091e46289&"
-                    alt="Panda logo"
-                    width={357}
-                    height={324}
-                    className="max-w-full aspect-[1.1]"
-                  /> */}
                   <FloatingPanda />
                   <div className="flex flex-col self-stretch mt-9 text-white max-md:max-w-full">
                     <h1 className="text-5xl font-extrabold uppercase font-monument leading-[58px] max-md:max-w-full max-md:text-4xl max-md:leading-[49px]">
@@ -227,7 +218,9 @@ const Hero: React.FC = () => {
                     </p>
                   </div>
                   <div className="flex flex-col mt-14 ml-3.5 max-w-full text-center w-[382px] max-md:mt-10 max-md:ml-2.5">
-                    <p className="text-lg leading-6 font-monument font-semibold mr-auto">Join us on</p>
+                    <p className="text-lg leading-6 font-monument font-semibold mr-auto">
+                      Join us on
+                    </p>
                     <div className="flex gap-3 mt-5 text-base text-white whitespace-nowrap">
                       <SocialIcon
                         src="https://cdn.builder.io/api/v1/image/assets/TEMP/f6018371bb96fc60534cfe197cbe1f34d66610ec2f46b62e4302dbd7f4a73242?apiKey=1f7f595eced5468b9fc0d8d091e46289&"
