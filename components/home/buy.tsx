@@ -2,6 +2,14 @@
 import * as React from "react";
 import Image from "next/image";
 
+// core version + navigation, pagination modules:
+import { Navigation, Pagination } from "swiper/modules";
+// import Swiper and modules styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Swiper, SwiperSlide } from "swiper/react";
+
 /**
  * Props for the PandaCard component.
  */
@@ -64,7 +72,7 @@ const NavigationArrow: React.FC<NavigationArrowProps> = ({
       } rounded-xl border-gray-200 border-solid border-[0.828px]`}
     >
       <Image
-        src={`httpS://cdn.builder.io/ext_${direction === "left" ? "2" : "8"}-`}
+        src={`https://cdn.builder.io/ext_${direction === "left" ? "2" : "8"}-`}
         alt={`${direction} arrow`}
         width={direction === "left" ? 11 : 10}
         height={direction === "left" ? 183 : 200}
@@ -192,13 +200,15 @@ function Buy(): JSX.Element {
               These tokens are your gateway to minting playable characters.
             </h1>
           </header>
-          <nav className="flex gap-5 justify-center items-center self-stretch px-5 mt-14 w-full max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
-            <NavigationArrow
-              direction="left"
-              onClick={() => handleNavigationClick("left")}
-            />
-            {pandaCards.map((card, index) => (
-              <React.Fragment key={index}>
+          <Swiper
+            spaceBetween={30}
+            slidesPerView={"auto"}
+            modules={[Navigation, Pagination]}
+            wrapperClass="!m-auto !mt-5"
+            className="!flex gap-5 justify-center items-center self-stretch !px-5 mt-14 w-full max-md:flex-wrap max-md:mt-10 max-md:max-w-full"
+          >
+            {Array(10).fill(pandaCards[0]).map((card, index) => (
+              <SwiperSlide key={index} className="!w-max">
                 {index === selectedPanda ? (
                   <div className="flex flex-col self-stretch p-4 text-2xl tracking-widest leading-8 text-center text-white rounded-3xl shadow-lg bg-zinc-800 bg-opacity-90">
                     <Image
@@ -217,13 +227,9 @@ function Buy(): JSX.Element {
                     onClick={() => handlePandaClick(index)}
                   />
                 )}
-              </React.Fragment>
+              </SwiperSlide>
             ))}
-            <NavigationArrow
-              direction="right"
-              onClick={() => handleNavigationClick("right")}
-            />
-          </nav>
+          </Swiper>
           <button
             onClick={handleBuyClick}
             className="flex flex-col justify-center p-5 mt-7 text-lg leading-6 text-center rounded-3xl border border-yellow-700 border-solid"

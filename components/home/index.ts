@@ -1,3 +1,5 @@
 import Hero from "./hero";
 import Buy from "./buy";
-export { Hero, Buy };
+import BelowBuy from "./below-buy";
+
+export { Hero, Buy, BelowBuy };
