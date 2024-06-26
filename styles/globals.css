@@ -24,8 +24,20 @@
   font-weight: 800; /* Ultrabold */
 }
 
+@font-face {
+  font-family: "Neurial Grotesk";
+  src: url("/fonts/NeurialGrotesk-Regular.otf") format("opentype"),
+    url("/fonts/NeurialGrotesk-Medium.otf") format("opentype"),
+    url("/fonts/NeurialGrotesk-Bold.otf") format("opentype"),
+    url("/fonts/NeurialGrotesk-ExtraBold.otf") format("opentype");
+  font-weight: normal; /* Regular */
+  font-weight: 700; /* Bold */
+  font-weight: 500; /* Medium */
+  font-weight: 800; /* ExtraBold */
+}
+
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Neurial Grotesk", sans-serif;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -45,4 +57,32 @@ body {
   .default-bg-gradient {
     @apply bg-gradient-to-t from-yellow-500 to-yellow-950;
   }
+}
+
+.panda-card {
+  display: flex;
+  width: 218.056px;
+  padding: 10.54px;
+  flex-direction: column;
+  align-items: center;
+  gap: 15.811px;
+  border-radius: 13.176px;
+  background: rgba(46, 46, 46, 0.9);
+  box-shadow: 0px 3.313px 8.282px 0px rgba(0, 0, 0, 0.35),
+    0px 2.635px 9.223px 0px rgba(139, 107, 25, 0.5) inset,
+    0px 3.313px 36.441px 0px rgba(238, 238, 238, 0.35);
+  /* backdrop-filter: blur(9.938556671142578px); */
+}
+
+.panda-card img {
+  width: 196.975px;
+  height: 197.634px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  border-radius: 13.176px;
+  border: 0.828px solid #ececec;
 }

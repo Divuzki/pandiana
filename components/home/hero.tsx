@@ -3,6 +3,49 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 /**
+ * A component that renders a floating panda on a UFO.
+ * @returns {JSX.Element} The FloatingPanda component.
+ */
+const FloatingPanda: React.FC = () => {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    /**
+     * Animates the floating effect of the panda.
+     */
+    const animateFloat = () => {
+      const time = Date.now() / 1000;
+      const newX = Math.sin(time) * 20;
+      const newY = Math.cos(time) * 20;
+      setPosition({ x: newX, y: newY });
+    };
+
+    const animationId = requestAnimationFrame(function animate() {
+      animateFloat();
+      requestAnimationFrame(animate);
+    });
+
+    return () => cancelAnimationFrame(animationId);
+  }, []);
+
+  return (
+    <div
+      className="relative w-full max-w-[357px] aspect-[1.1]"
+      style={{
+        transform: `translate(${position.x}px, ${position.y}px)`,
+      }}
+    >
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/7a087aed668ed370846b489e1c765eac076ccacbcb6f1e7557641428da19d33a?apiKey=1f7f595eced5468b9fc0d8d091e46289&"
+        alt="Floating panda on a UFO"
+        className="w-full h-full object-cover"
+      />
+      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-3/4 h-1/4 bg-gradient-to-t from-gray-300 to-transparent rounded-full opacity-50 blur-md"></div>
+    </div>
+  );
+};
+
+/**
  * Props for the SocialIcon component
  */
 type SocialIconProps = {
@@ -164,13 +207,14 @@ const Hero: React.FC = () => {
             <div className="flex gap-5 max-md:flex-col max-md:gap-0">
               <section className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
                 <div className="flex flex-col md:items-start items-center max-md:mt-10 max-md:max-w-full">
-                  <Image
+                  {/* <Image
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/7a087aed668ed370846b489e1c765eac076ccacbcb6f1e7557641428da19d33a?apiKey=1f7f595eced5468b9fc0d8d091e46289&"
                     alt="Panda logo"
                     width={357}
                     height={324}
                     className="max-w-full aspect-[1.1]"
-                  />
+                  /> */}
+                  <FloatingPanda />
                   <div className="flex flex-col self-stretch mt-9 text-white max-md:max-w-full">
                     <h1 className="text-5xl font-extrabold uppercase font-monument leading-[58px] max-md:max-w-full max-md:text-4xl max-md:leading-[49px]">
                       Channel Your <br /> Inner Panda
