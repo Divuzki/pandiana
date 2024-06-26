@@ -16,7 +16,16 @@
   }
 }
 
+@font-face {
+  font-family: "Monument Extended";
+  src: url("/fonts/MonumentExtended-Regular.otf") format("opentype"),
+    url("/fonts/MonumentExtended-Ultrabold.otf") format("opentype");
+  font-weight: normal; /* Regular */
+  font-weight: 800; /* Ultrabold */
+}
+
 body {
+  font-family: "Inter", sans-serif;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -29,5 +38,11 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .font-monument {
+    font-family: "Monument Extended", sans-serif;
+  }
+  .default-bg-gradient {
+    @apply bg-gradient-to-t from-yellow-500 to-yellow-950;
   }
 }

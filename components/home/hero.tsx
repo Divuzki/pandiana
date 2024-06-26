@@ -49,9 +49,11 @@ type CountdownItemProps = {
  * Renders a single countdown item (days, hours, minutes, seconds)
  */
 const CountdownItem: React.FC<CountdownItemProps> = ({ label, value }) => (
-  <div className="flex flex-col grow justify-center p-3 text-center text-white whitespace-nowrap rounded-3xl max-md:px-5">
-    <div className="text-xs tracking-wide leading-8 uppercase">{label}</div>
-    <div className="mt-5 text-3xl tracking-widest leading-[88px]">
+  <div className="flex flex-col grow justify-center p-3 text-center font-monument text-white whitespace-nowrap rounded-3xl max-md:px-5">
+    <div className="text-[10px] font-medium tracking-wide uppercase">
+      {label}
+    </div>
+    <div className="font-extrabold text-3xl tracking-widest">
       {value.toString().padStart(2, "0")}
     </div>
   </div>
@@ -74,7 +76,10 @@ const PresaleInfo: React.FC<PresaleInfoProps> = ({ label, value }) => (
       {label}
     </div>
     <div className="flex flex-col justify-center mt-2 text-lg leading-6">
-      <div className="bg-clip-text">{value}</div>
+      <div className="bg-clip-text font-bold">
+        (<span className="font-monument mr-2 text-yellow-500">$PNDA</span>
+        {value})
+      </div>
     </div>
   </div>
 );
@@ -89,8 +94,8 @@ const Hero: React.FC = () => {
     minutes: 45,
     seconds: 32,
   });
-  const [solAmount, setSolAmount] = useState<number>(0);
-  const [pndaAmount, setPndaAmount] = useState<number>(0);
+  const [solAmount, setSolAmount] = useState<number>();
+  const [pndaAmount, setPndaAmount] = useState<number>();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -158,7 +163,7 @@ const Hero: React.FC = () => {
           <div className="mt-12 w-full max-w-[1177px] max-md:mt-10 max-md:max-w-full">
             <div className="flex gap-5 max-md:flex-col max-md:gap-0">
               <section className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
-                <div className="flex flex-col items-start max-md:mt-10 max-md:max-w-full">
+                <div className="flex flex-col md:items-start items-center max-md:mt-10 max-md:max-w-full">
                   <Image
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/7a087aed668ed370846b489e1c765eac076ccacbcb6f1e7557641428da19d33a?apiKey=1f7f595eced5468b9fc0d8d091e46289&"
                     alt="Panda logo"
@@ -167,10 +172,10 @@ const Hero: React.FC = () => {
                     className="max-w-full aspect-[1.1]"
                   />
                   <div className="flex flex-col self-stretch mt-9 text-white max-md:max-w-full">
-                    <h1 className="text-5xl font-extrabold uppercase leading-[58px] max-md:max-w-full max-md:text-4xl max-md:leading-[49px]">
+                    <h1 className="text-5xl font-extrabold uppercase font-monument leading-[58px] max-md:max-w-full max-md:text-4xl max-md:leading-[49px]">
                       Channel Your <br /> Inner Panda
                     </h1>
-                    <p className="mt-3 text-xl leading-7 max-md:max-w-full">
+                    <p className="mt-3 text-xl leading-7 max-md:max-w-full text-gray-300">
                       Welcome to Pandiana, the next big wave in the world of
                       play-to-earn gaming. We&#39;re not just another memecoin
                       but a revolution in the blockchain gaming arena, built on
@@ -178,7 +183,7 @@ const Hero: React.FC = () => {
                     </p>
                   </div>
                   <div className="flex flex-col mt-14 ml-3.5 max-w-full text-center w-[382px] max-md:mt-10 max-md:ml-2.5">
-                    <p className="text-lg leading-6 bg-clip-text">Join us on</p>
+                    <p className="text-lg leading-6 font-monument font-semibold mr-auto">Join us on</p>
                     <div className="flex gap-3 mt-5 text-base text-white whitespace-nowrap">
                       <SocialIcon
                         src="https://cdn.builder.io/api/v1/image/assets/TEMP/f6018371bb96fc60534cfe197cbe1f34d66610ec2f46b62e4302dbd7f4a73242?apiKey=1f7f595eced5468b9fc0d8d091e46289&"
@@ -197,7 +202,7 @@ const Hero: React.FC = () => {
                       />
                       <a
                         href="#"
-                        className="flex gap-2.5 justify-center px-6 py-3 border border-white border-solid bg-white bg-opacity-20 rounded-[80px] max-md:px-5 hover:bg-opacity-30 transition-colors"
+                        className="flex gap-2.5 justify-center items-center px-6 py-3 border border-white border-solid bg-white bg-opacity-20 rounded-[80px] max-md:px-5 hover:bg-opacity-30 transition-colors"
                       >
                         <span>Whitepaper</span>
                         <img
@@ -213,16 +218,16 @@ const Hero: React.FC = () => {
                 </div>
               </section>
               <section className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
-                <div className="flex flex-col grow px-8 pt-8 pb-8 mt-6 w-full border border-teal-900 border-solid shadow-sm bg-neutral-900 bg-opacity-50 rounded-[40px] max-md:px-5 max-md:mt-10 max-md:max-w-full">
+                <div className="flex flex-col grow px-8 pt-8 pb-8 mt-6 w-full border border-teal-900 backdrop-blur-md border-solid shadow-sm bg-neutral-900 bg-opacity-50 rounded-[40px] max-md:px-5 max-md:mt-10 max-md:max-w-full">
                   <div className="flex flex-col self-center text-center rounded-[30px]">
-                    <h2 className="text-xl tracking-widest leading-8 uppercase bg-clip-text">
+                    <h2 className="text-xl tracking-widest leading-8 text-yellow-600 uppercase bg-clip-text">
                       $PNDA TOKEN Presale
                     </h2>
                     <p className="self-center mt-1 text-2xl font-medium leading-7 bg-clip-text">
                       Starts in
                     </p>
                   </div>
-                  <div className="justify-center px-3 mt-6 rounded-3xl border border-yellow-700 border-solid max-md:max-w-full">
+                  <div className="justify-center px-3 mt-6 py-4 rounded-3xl border bg-gradient-to-t from-yellow-500 to-yellow-950 border-yellow-700 border-solid max-md:max-w-full">
                     <div className="flex gap-5 max-md:flex-col max-md:gap-0">
                       <CountdownItem label="Days" value={timeLeft.days} />
                       <CountdownItem label="Hours" value={timeLeft.hours} />
@@ -232,32 +237,36 @@ const Hero: React.FC = () => {
                   </div>
                   <div className="flex flex-wrap gap-4 justify-center content-start px-3 mt-6 text-center">
                     <div className="flex flex-col justify-center px-14 rounded-[40px] max-md:px-5">
-                      <h3 className="text-xl font-medium leading-6 bg-clip-text">
+                      <h3 className="text-xl font-medium leading-6 text-stone-200">
                         Presale Price
                       </h3>
-                      <p className="self-center mt-2 text-lg leading-6 bg-clip-text">
+                      <p className="self-center mt-2 text-lg font-extrabold leading-6 text-gray-300 font-monument">
                         50,000
                       </p>
                     </div>
                     <div className="flex flex-col justify-center px-14 rounded-[40px] max-md:px-5">
-                      <h3 className="text-xl font-medium leading-6 bg-clip-text">
+                      <h3 className="text-xl font-medium leading-6 text-stone-200">
                         Listing Price
                       </h3>
-                      <p className="self-center mt-2 text-lg leading-6 bg-clip-text">
+                      <p className="self-center mt-2 text-lg font-extrabold leading-6 text-gray-300 font-monument">
                         25,000
                       </p>
                     </div>
                   </div>
-                  <p className="self-center mt-6 text-2xl font-medium leading-6 text-center bg-clip-text">
+                  <p className="self-center mt-6 text-2xl font-medium leading-6 text-stone-200 text-center bg-clip-text">
                     Listing at 50% on Raydium
                   </p>
+
                   <div className="flex gap-5 justify-between px-3 py-2 mt-6 text-xl font-medium leading-6 text-center border border-teal-900 border-solid bg-neutral-900 bg-opacity-70 rounded-[40px] max-md:flex-wrap">
                     <div className="shrink-0 h-6 bg-yellow-500 rounded-[46.59px] w-[197px]" />
-                    <p className="bg-clip-text">3400 SOL</p>
+                    <p className="bg-clip-text mr-auto text-stone-200">
+                      3400 SOL
+                    </p>
                   </div>
+
                   <form className="flex gap-5 justify-center mt-6 text-lg leading-6 uppercase whitespace-nowrap max-md:flex-wrap">
                     <div className="flex flex-col flex-1">
-                      <label htmlFor="solInput" className="bg-clip-text">
+                      <label htmlFor="solInput" className="font-monument">
                         Sol
                       </label>
                       <input
@@ -265,11 +274,11 @@ const Hero: React.FC = () => {
                         type="number"
                         value={solAmount}
                         onChange={handleSolInputChange}
-                        className="flex flex-col justify-center p-3 mt-3 rounded-xl border border-teal-900 border-solid bg-neutral-900 bg-opacity-70 bg-clip-text text-white"
+                        className="flex flex-col justify-center p-3 mt-3 rounded-xl border border-teal-900 border-solid bg-neutral-900 text-white"
                       />
                     </div>
                     <div className="flex flex-col flex-1">
-                      <label htmlFor="pndaInput" className="bg-clip-text">
+                      <label htmlFor="pndaInput" className="font-monument">
                         $PNDA
                       </label>
                       <input
@@ -277,25 +286,19 @@ const Hero: React.FC = () => {
                         type="number"
                         value={pndaAmount}
                         readOnly
-                        className="flex flex-col justify-center p-3 mt-3 rounded-xl border border-teal-900 border-solid bg-neutral-900 bg-opacity-70 bg-clip-text text-white"
+                        className="flex flex-col justify-center p-3 mt-3 rounded-xl border border-teal-900 border-solid bg-neutral-900 text-white"
                       />
                     </div>
                   </form>
                   <button
                     onClick={handleBuyPnda}
-                    className="flex flex-col justify-center self-center p-5 mt-6 text-lg leading-6 text-center rounded-3xl border border-yellow-700 border-solid hover:bg-yellow-700 transition-colors"
+                    className="flex flex-col justify-center default-bg-gradient self-center p-5 mt-6 text-lg leading-6 text-center rounded-3xl border border-yellow-700 border-solid hover:bg-yellow-700 transition-colors"
                   >
-                    <span className="bg-clip-text">Buy $PNDA</span>
+                    <span className="font-monument">Buy $PNDA</span>
                   </button>
                   <div className="flex flex-wrap gap-4 justify-center content-start px-3 mt-6 text-center">
-                    <PresaleInfo
-                      label="Presale Allocation"
-                      value="($PNDA 4,000,000)"
-                    />
-                    <PresaleInfo
-                      label="Total Supply"
-                      value="($PNDA 10,000,000)"
-                    />
+                    <PresaleInfo label="Presale Allocation" value="4,000,000" />
+                    <PresaleInfo label="Total Supply" value="10,000,000" />
                   </div>
                   <a
                     href="#"

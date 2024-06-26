@@ -58,7 +58,7 @@ const Roadmap: React.FC = () => {
     <main className="flex flex-col justify-center">
       <section className="flex overflow-hidden relative flex-col justify-center w-full min-h-[967px] max-md:max-w-full">
         <Image
-          src="/images/background.jpg"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/5f7ca208b22132b9cfd726889c567376459769a8df6da0884a5f1e4df6b0c952?apiKey=1f7f595eced5468b9fc0d8d091e46289&"
           layout="fill"
           objectFit="cover"
           alt="Background"

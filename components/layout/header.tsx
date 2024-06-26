@@ -21,7 +21,7 @@ type NavItemProps = {
  */
 const NavItem: React.FC<NavItemProps> = ({ text, onClick, isActive }) => (
   <button
-    className={`justify-center p-2.5 whitespace-nowrap transition-colors duration-200 ${
+    className={`justify-center p-2.5 font-sans font-semibold whitespace-nowrap transition-colors duration-200 ${
       isActive ? "bg-gray-700" : "hover:bg-gray-700"
     }`}
     onClick={onClick}
@@ -47,7 +47,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="flex justify-center items-center px-16 py-6 text-xl font-medium tracking-wider leading-6 text-center text-white max-md:px-5">
+    <header className="flex justify-center absolute w-full z-50 items-center px-16 py-6 text-xl font-medium tracking-wider leading-6 text-center text-white max-md:px-5">
       <div className="flex gap-5 justify-between w-full max-w-[1200px] max-md:flex-wrap max-md:max-w-full">
         <Image
           src="/logo.svg"
