@@ -1,5 +1,5 @@
 import { Layout } from "@/components";
-import { BelowBuy, Buy, Hero, Pandanomics } from "@/components/home";
+import { BelowBuy, Buy, Hero, Pandanomics, Roadmap } from "@/components/home";
 
 export default function Home() {
   return (
@@ -8,6 +8,7 @@ export default function Home() {
       <Buy />
       <BelowBuy />
       <Pandanomics />
+      <Roadmap />
     </Layout>
   );
 }
