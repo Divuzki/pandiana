@@ -21,9 +21,9 @@ const TokenAllocation: React.FC<TokenAllocationProps> = ({
     <h3 className="self-center text-2xl font-medium leading-6 bg-clip-text">
       {title}
     </h3>
-    <div className="flex flex-col justify-center mt-8 text-xl leading-6">
+    <div className="flex flex-col justify-center font-monument mt-8 text-xl leading-6">
       <p className="bg-clip-text">
-        {percentage} ($PNDA {amount})
+        {percentage} (<b className="text-yellow-500">$PNDA</b> {amount})
       </p>
     </div>
   </section>
