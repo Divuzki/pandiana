@@ -16,7 +16,7 @@ const FeatureItem: React.FC<FeatureItemProps> = ({ imageSrc, text }) => (
       height={70}
       className="shrink-0 aspect-square"
     />
-    <div className="my-auto max-md:max-w-full">{text}</div>
+    <div className="my-auto max-md:max-w-full mr-auto">{text}</div>
   </div>
 );
 
@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
                     <h2 className="self-center text-2xl font-medium leading-8 max-md:max-w-full">
                       The Real Adventure Starts Here
                     </h2>
-                    <h1 className="mt-7 text-3xl font-extrabold leading-10 text-center uppercase max-md:max-w-full">
+                    <h1 className="mt-7 text-3xl font-monument font-extrabold leading-10 text-center uppercase max-md:max-w-full">
                       Join our vibrant community of $PNDA holders
                     </h1>
                   </div>
@@ -78,9 +78,7 @@ const Footer: React.FC = () => {
                       onClick={handleTelegramClick}
                       onMouseEnter={() => setIsHovered(true)}
                       onMouseLeave={() => setIsHovered(false)}
-                      className={`flex gap-2.5 justify-center px-5 py-3 border border-white border-solid bg-white bg-opacity-20 rounded-[80px] max-md:flex-wrap transition-all duration-300 ${
-                        isHovered ? "bg-opacity-30" : ""
-                      }`}
+                      className={`flex gap-2.5 justify-center w-max backdrop-blur-sm px-5 py-3 border border-white border-solid bg-white bg-opacity-20 rounded-[80px] max-md:flex-wrap transition-all duration-300 hover:bg-opacity-30`}
                     >
                       <img
                         src="https://cdn.builder.io/api/v1/image/assets/TEMP/42240ab8b25074d9d900612ce1c2e8d8dba4dc2b56dafa59301f3331c26862de?apiKey=1f7f595eced5468b9fc0d8d091e46289&"
@@ -89,7 +87,7 @@ const Footer: React.FC = () => {
                         height={28}
                         className="shrink-0 aspect-[1.28]"
                       />
-                      <span className="my-auto">Join telegram</span>
+                      <span className="my-auto font-monument">Join telegram</span>
                     </button>
                     <img
                       src="https://cdn.builder.io/api/v1/image/assets/TEMP/2ac4ce80216a648cbc18aec7251a599ddb27faa126c3b177e39ac1128514b710?apiKey=1f7f595eced5468b9fc0d8d091e46289&"
@@ -104,13 +102,13 @@ const Footer: React.FC = () => {
               <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
                 <section
                   onClick={handleFeatureSectionClick}
-                  className="flex flex-col justify-center p-16 w-full text-white border border-teal-900 border-solid bg-neutral-900 bg-opacity-70 rounded-[40px] max-md:px-5 max-md:max-w-full cursor-pointer transition-all duration-300 hover:bg-opacity-80"
+                  className="flex flex-col justify-center p-16 w-full backdrop-blur-md text-white border border-teal-900 border-solid bg-neutral-900 bg-opacity-70 rounded-[40px] max-md:px-5 max-md:max-w-full cursor-pointer transition-all duration-300 hover:bg-opacity-80"
                 >
-                  <h2 className="text-3xl font-extrabold leading-10 text-center uppercase max-md:max-w-full">
+                  <h2 className="text-3xl font-monument font-extrabold leading-10 text-center uppercase max-md:max-w-full">
                     Together, we&#39;ll carve out our niche in the digital
                     wilderness
                   </h2>
-                  <div className="flex flex-col mt-8 text-2xl tracking-wider leading-9 capitalize max-md:max-w-full">
+                  <div className="flex flex-col mt-8 justify-center items-start text-2xl tracking-wider leading-9 capitalize max-md:max-w-full">
                     {features.map((feature, index) => (
                       <FeatureItem
                         key={index}
@@ -128,7 +126,7 @@ const Footer: React.FC = () => {
               </div>
             </div>
           </section>
-          <footer className="flex gap-5 justify-between self-center mt-20 text-xl leading-8 text-white max-md:mt-10">
+          <footer className="flex gap-5 justify-between self-center mt-20 text-sm leading-8 text-white max-md:mt-10">
             <div>©2024 Pandiana</div>
             <div>contact@pandiana.io</div>
           </footer>
